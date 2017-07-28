@@ -1,0 +1,14 @@
+{
+  "name": "kings",
+  "version": "1.0.0",
+  "description": "an alexa skill to play the game kings",
+  "main": "kings.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Taylor Wan",
+  "license": "ISC",
+  "dependencies": {
+    "alexa-sdk": "^1.0.11"
+  }
+}
