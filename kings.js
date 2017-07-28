@@ -37,13 +37,13 @@ let deck = [{
   value       : 'three',
   synonyms    : ['3'],
   action      : 'Me',
-  explanation : 'Take a drink.',
+  explanation : 'You get to take a drink.',
   counter     : 4
 }, {
   value       : 'four',
   synonyms    : ['4'],
   action      : 'Floor',
-  explanation : 'The last person to touch the floor drinks.',
+  explanation : 'The last person to touch the floor has to drink.',
   counter     : 4
 }, {
   value       : 'five',
@@ -97,7 +97,7 @@ let deck = [{
   value       : 'king',
   synonyms    : ['13', 'thirteen'],
   action      : 'You are the ruler of the land! Make a new rule. If anyone breaks the rule, they must drink.',
-  explanation : 'This can be anything you\'d like, and the rule applies until the end of the game, or until another player makes a different rule.',
+  explanation : 'This can be anything you\'d like, and the rule applies until the end of the game or until another player makes a different rule.',
   counter     : 4
 }];
 
