@@ -108,17 +108,16 @@ let deck = [{
 const chooseCard = function() {
   // choose a type of card from our remaining deck
   const cardTypeIndex = parseInt(Math.random() * remainingCards.length);
-  const chosenIndex = remainingCards[cardTypeIndex];
+  const chosenIndex   = remainingCards[cardTypeIndex];
+  const card          = deck[chosenIndex];
 
   // decrement our counter
-  const count = deck[chosenIndex].counter;
-  deck[chosenIndex].counter = count - 1;
+  card.counter = card.counter - 1;
 
   // if there are none remaining of this card, remove it from our possible selections
-  if (deck[chosenIndex].counter === 0)
+  if (card.counter === 0)
     remainingCards.splice(cardTypeIndex, 1);
 
-  const card = deck[chosenIndex];
   return 'Your card is: ' + card.value + ', ' + card.action + '.';
 };
 
@@ -165,40 +164,49 @@ const explainCard = function(value) {
   return card.action + '. ' + card.explanation;
 };
 
-
+// handlers for each intent
 const handlers = {
-  'LaunchRequest': function () {
+  'LaunchRequest': function() {
     this.emit(':tell', messages.welcome);
   },
-  'playKings' : function() {
-    if (remainingCards.length === 0) {
-      this.emit(':tell', 'We are out of cards! If you would like to play again say, "new game"');
-    } else {
-      this.emit(':tell', chooseCard());
-    }
+  'IntentRequest': function() {
+    this.emit('playKingsIntent');
   },
-  'newGame' : function() {
-    this.emit(':tell', resetDeck());
-  },
-  'getExplanation' : function() {
-    this.emit(':tell', explainCard(this.event.request.intent.slots.number.value));
-  },
-  'AMAZON.HelpIntent': function () {
-    this.emit(':ask', messages.help, messages.ask);
-  },
-  'AMAZON.CancelIntent': function () {
+  'SessionEndedRequest': function() {
     this.emit(':tell', messages.stop);
   },
-  'AMAZON.StopIntent': function () {
+  'playKingsIntent' : function() {
+    if (remainingCards.length === 0)
+      this.emit(':tell', 'Game over! We are out of cards. If there is a middle cup, it\'s time to drink! If you would like to play again say, "new game"');
+    else
+      this.emit(':tell', chooseCard());
+  },
+  'newGameIntent' : function() {
+    this.emit(':tell', resetDeck());
+  },
+  'getExplanationIntent' : function() {
+    this.emit(':tell', explainCard(this.event.request.intent.slots.number.value));
+  },
+  'AMAZON.HelpIntent': function() {
+    this.emit(':ask', messages.help, messages.ask);
+  },
+  'AMAZON.CancelIntent': function() {
+    this.emit(':tell', messages.stop);
+  },
+  'AMAZON.StopIntent': function() {
     this.emit(':tell', messages.stop);
   },
 };
 
+// entry point
 exports.handler = function (event, context) {
   const alexa = Alexa.handler(event, context);
+
+  // make sure application ID matches
   if (event.session.application.applicationId !== APP_ID) {
       throw new Error('Invalid Application ID');
   }
+
   alexa.registerHandlers(handlers);
   alexa.execute();
 };
