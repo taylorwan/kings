@@ -90,14 +90,14 @@ let deck = [{
 }, {
   value       : 'queen',
   synonyms    : ['12', 'twelve'],
-  action      : 'You are now the question master!',
-  explanation : 'If anyone answers a question that the question master asks, he or she must drink. This continues until the end of the game, or until another player draws the card.',
+  action      : 'You are now the question master! If anyone asks you a question, they must drink.',
+  explanation : 'This continues until the end of the game, or until another player draws the card.',
   counter     : 4
 }, {
   value       : 'king',
   synonyms    : ['13', 'thirteen'],
-  action      : 'You get to make a new rule',
-  explanation : 'To perform a waterfall, each player starts drinking their beverage at the same time as the person to their left. No player can stop drinking until the player before them stops.',
+  action      : 'You are the ruler of the land! Make a new rule. If anyone breaks the rule, they must drink.',
+  explanation : 'This can be anything you\'d like, and the rule applies until the end of the game, or until another player makes a different rule.',
   counter     : 4
 }];
 
