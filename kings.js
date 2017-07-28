@@ -185,7 +185,7 @@ const handlers = {
     this.emit(':tell', resetDeck());
   },
   'getExplanationIntent' : function() {
-    this.emit(':tell', explainCard(this.event.request.intent.slots.number.value));
+    this.emit(':tell', explainCard(this.event.request.intent.slots.card.value));
   },
   'AMAZON.HelpIntent': function() {
     this.emit(':ask', messages.help, messages.ask);
