@@ -14,7 +14,7 @@ const messages = {
   welcome : 'Welcome to Kings! I hope you all have a drink. Ask me for your first card when you\'re ready.',
   stop    : 'Thanks for playing! Goodbye!',
   help    : 'You can ask me to draw a card, or about what a card can do.',
-  ask     : 'Would you like a card?'
+  ask     : 'If you would like a card, say "Alexa, ask kings for a card"'
 };
 
 // tracks which types of cards are still in the deck
@@ -61,7 +61,7 @@ let deck = [{
   value       : 'seven',
   synonyms    : ['7'],
   action      : 'Heaven',
-  explanation : 'The last person to point to the ceiling drinks.',
+  explanation : 'The last person to point to the ceiling has to drink.',
   counter     : 4
 }, {
   value       : 'eight',
@@ -73,30 +73,30 @@ let deck = [{
   value       : 'nine',
   synonyms    : ['9'],
   action      : 'Rhyme',
-  explanation : 'Choose a word, then go around in a circle saying words word that rhyme with the initial word. The first person who can\'t think of a word or repeats a word must drink.',
+  explanation : 'Choose a word, then go around in a circle saying words that rhyme with the initial word. The first person who can\'t think of a word, or repeats a word, must drink.',
   counter     : 4
 }, {
   value       : 'ten',
   synonyms    : ['10'],
   action      : 'Categories',
-  explanation : 'Think of a category of things, then go around in a circle saying things belonging to that category. The first person who can\'t think of an item or repeats an item must drink.',
+  explanation : 'Think of a category of things, then go around in a circle saying things belonging to that category. The first person who can\'t think of an item, or repeats an item, must drink.',
   counter     : 4
 }, {
   value       : 'jack',
   synonyms    : ['11', 'eleven'],
   action      : 'Never have I ever',
-  explanation : 'Every player starts with three fingers up. Go around in a circle making "Never Have I Ever" statements. First person to run out of fingers drinks.',
+  explanation : 'Every player starts with three fingers up. Go around in a circle making "Never Have I Ever" statements. The first person to run out of fingers has to drink.',
   counter     : 4
 }, {
   value       : 'queen',
   synonyms    : ['12', 'twelve'],
   action      : 'You are now the question master! If anyone asks you a question, they must drink.',
-  explanation : 'This continues until the end of the game, or until another player draws the card.',
+  explanation : 'This continues until the end of the game, or until another player draws a queen.',
   counter     : 4
 }, {
   value       : 'king',
   synonyms    : ['13', 'thirteen'],
-  action      : 'You are the ruler of the land! Make a new rule. If anyone breaks the rule, they must drink.',
+  action      : 'You are now the ruler of the land! If there was a previous king, they have been dethroned. Make a new rule as king. If anyone breaks the rule, they must drink.',
   explanation : 'This can be anything you\'d like, and the rule applies until the end of the game or until another player makes a different rule.',
   counter     : 4
 }];

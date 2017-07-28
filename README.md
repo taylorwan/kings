@@ -15,7 +15,7 @@ The game starts when the user prompts the skill for a card--the app will subsequ
 Alexa, ask Kings to draw.
 - Draw a card from the remaining deck
 
-Alexa, ask Kings to explain the card 'Ace'
+Alexa, ask Kings about the card 'Ace'
 Alexa, ask Kings, "what does 'Ace' do"?
 - Get an explanation for the actions for each card. Works for any valid card.
 
