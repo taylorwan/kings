@@ -6,8 +6,8 @@
 
 'use strict';
 
-const Alexa = require('alexa-sdk');
-const APP_ID = 'amzn1.ask.skill.e77444e5-1d0f-41f0-b891-cf2f974f2985';
+const Alexa  = require('alexa-sdk');
+const APP_ID = 'your-app-id-here';
 
 // default messages to the user
 const messages = {
