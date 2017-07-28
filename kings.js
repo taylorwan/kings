@@ -132,7 +132,7 @@ const resetDeck = function() {
 */
 const explainCard = function(value) {
   // get the card to explain
-  const card = deck.filter((card) => card.value === value);
+  const card = deck.filter((card) => card.value === value)[0];
   // craft explanation
   return card.action + '. ' + card.explanation;
 };
